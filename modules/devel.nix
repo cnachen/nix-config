@@ -16,7 +16,10 @@ in with lib; {
     };
 
     environment.systemPackages = with pkgs; [
-      gcc gnumake
+      gcc
+      gdb
+      gnumake
+      pkg-config
     ];
   };
 }
