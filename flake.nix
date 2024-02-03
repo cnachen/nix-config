@@ -7,7 +7,7 @@
 
   outputs = flakes @ { self, nixpkgs, ... }: {
     nixosConfigurations = {
-      "nixvirt" = nixpkgs.lib.nixosSystem {
+      nixvirt = nixpkgs.lib.nixosSystem {
 	system = "aarch64-linux";
 	specialArgs = flakes;
 	modules = [

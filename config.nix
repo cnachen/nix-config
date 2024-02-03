@@ -1,14 +1,17 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, targetHost, ... }:
 
-{
+with lib; {
   imports = [
-    ./hardware.nix
+    ./hosts
     ./modules
     ./users
   ];
 
-  cnachen = {
-    modules.devel.enable = true;
-    users.cnachen.enable = true;
+  config = {
+    cnachen = {
+      hosts.nixvirt.enable = true;
+      modules.devel.enable = true;
+      users.cnachen.enable = true;
+    };
   };
 }
